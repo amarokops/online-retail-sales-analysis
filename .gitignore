@@ -1,0 +1,10 @@
+# Raw source data
+data/raw/*
+!data/raw/.gitkeep
+
+# Temporary Excel files
+~$*
+
+# Operating system files
+Thumbs.db
+.DS_Store
