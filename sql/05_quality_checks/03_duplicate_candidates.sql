@@ -98,3 +98,36 @@ SELECT
 		END) AS total_negative_value,
 	SUM(quantity * unit_price) AS total_net_value
 FROM typed_transactions;
+
+
+-- Inspect transactions with negative unit prices.
+-- Determines whether they represent merchandise sales, cancellations or accounting adjustments.
+
+SELECT
+	invoice_no_raw AS invoice_no,
+    stock_code_raw AS stock_code,
+    description_raw AS description,
+    CAST(quantity_raw AS SIGNED) AS quantity,
+    CAST(unit_price_raw AS DECIMAL(12,4)) AS unit_price,
+    (CAST(quantity_raw AS SIGNED)) * (CAST(unit_price_raw AS DECIMAL(12,4))) AS line_value,
+    customer_id_raw AS customer_id,
+    country_raw AS country
+FROM stg_online_retail
+WHERE CAST(unit_price_raw AS DECIMAL(12,4)) < 0;
+
+-- Inspect all records associated with the bad-debt adjustment code.
+-- Checks whether negative accounting entries have corresponding positive entries in the source data.
+
+SELECT
+	invoice_no_raw AS invoice_no,
+    stock_code_raw AS stock_code,
+    description_raw AS description,
+    CAST(quantity_raw AS SIGNED) AS quantity,
+    CAST(unit_price_raw AS DECIMAL(12,4)) AS unit_price,
+    (CAST(quantity_raw AS SIGNED)) * (CAST(unit_price_raw AS DECIMAL(12,4))) AS line_value,
+    customer_id_raw AS customer_id,
+    country_raw AS country,
+    STR_TO_DATE(invoice_date_raw, '%e.%m.%Y %H:%i') AS invoice_date
+FROM stg_online_retail
+WHERE stock_code_raw = 'B'
+ORDER BY invoice_date;
