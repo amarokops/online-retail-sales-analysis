@@ -1,3 +1,5 @@
+USE online_retail_analysis;
+
 -- Profile non-standard stock codes that may represent fees, discounts or operational adjustments.
 -- Prevents non-merchandise records from distorting product sales and product ranking metrics.
 
