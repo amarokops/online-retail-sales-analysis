@@ -1,3 +1,5 @@
+USE online_retail_analysis;
+
 -- Validate raw text fields before converting them into analytical data types.
 -- Prevents malformed values from being silently converted to zero or NULL in the cleaned layer.
 
