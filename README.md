@@ -22,7 +22,7 @@ The reporting model uses a star schema connecting transaction-level activity wit
 
 ### Project Resources
 
-- Power BI Dashboard is available [online](https://app.powerbi.com/links/2tvr8_Wn7b?ctid=19504e94-d26c-473e-8da1-c2bdb363e8e8&pbi_source=linkShare&language=en-US), can be downloaded from the [repository](power-bi/online_retail_analysis.pbix) or shown as a [pdf](power-bi/online_retail_analysis_dashboard.pdf).
+- Power BI Dashboard is available [online](https://app.powerbi.com/view?r=eyJrIjoiZjAwMDNjYWUtYTlmNS00MTYyLTgxMGYtZWU2NGJkZjZkYjc4IiwidCI6IjE5NTA0ZTk0LWQyNmMtNDczZS04ZGExLWMyYmRiMzYzZThlOCJ9&language=en-US), can be downloaded from the [repository](power-bi/online_retail_analysis.pbix) or shown as a [pdf](power-bi/online_retail_analysis_dashboard.pdf).
 - The Excel analysis workbook is available in the [`excel/`](excel/) directory.
 - SQL scripts used for database setup, data cleaning, modelling, quality checks and business analysis are available in the [`sql/`](sql/) directory.
 - The original dataset is available from the [UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/352/online%2Bretail).
@@ -41,10 +41,13 @@ The analysis indicates that protecting high-value customers, re-engaging the At 
 
 ### Sales Performance
 
-Monthly performance was uneven during the first half of the reporting period. Net merchandise sales fell to **£499.46K** in February and **£482.06K** in April, before remaining between approximately **£677K** and **£731K** from May to August 2011. Sales strengthened toward the end of the reporting period. Net merchandise sales increased from **£1.01M** in September to **£1.06M** in October and reached **£1.43M** in November 2011—the highest result among complete months.
+Monthly performance was uneven during the first half of the reporting period. Net merchandise sales fell to **£499.46K** in February and **£482.06K** in April, before remaining between approximately **£677K** and **£731K** from May to August 2011.
 
 Cancellation exposure was usually limited, but January and April stood out with cancellation value rates of **13.65%** and **6.46%**, respectively. December 2011 was excluded from month-to-month comparisons because the dataset covers only its first nine days.
+
 ### Product Cancellation Exposure
+
+Merchandise cancellations reduced recorded value by **£475.90K**, equivalent to **4.64%** of gross merchandise sales. This impact was concentrated among a relatively small number of products and exceptional bulk transactions.
 
 Cancellation impact was highly concentrated among a small number of products and transactions. `PAPER CRAFT, LITTLE BIRDIE` recorded **£168.47K** in gross sales followed by an equal cancellation, leaving no net merchandise value. Both entries related to a single bulk transaction of **80,995 units**.
 
