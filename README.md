@@ -190,7 +190,7 @@ online-retail-sales-analysis/
 ```
 
 - [`data/`](data/) — source-data information and a portfolio-friendly sample of the dataset.
-- [`docs/`](docs/) — supporting project documentation.
+- [`docs/`](docs/) — data dictionary and supporting project documentation.
 - [`excel/`](excel/) — the Excel validation and business-exploration workbook.
 - [`images/`](images/) — dashboard pages and data-model screenshots used in this README.
 - [`power-bi/`](power-bi/) — the interactive Power BI report and its visual assets.
