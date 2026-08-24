@@ -1,8 +1,8 @@
 # Online Retail Sales Analysis
 
-![Company Logo](images/stellar_drift.png)
+![Banner](images/readme_banner.png)
 
-## Project Background
+## 🧭 Project Background
 
 This project analyzes transactional data from a UK-based online retailer. The source combines merchandise purchases with cancellations, inventory adjustments, shipping charges, discounts and other operational entries, making raw transaction value an unreliable measure of product sales.
 
@@ -22,14 +22,14 @@ The reporting model uses a star schema connecting transaction-level activity wit
 
 ### Project Resources
 
-- Power BI Dashboard is available [online](https://app.powerbi.com/links/G-9PEh4lpc?ctid=19504e94-d26c-473e-8da1-c2bdb363e8e8&pbi_source=linkShare&language=en-US), can be downloaded from the [repository](power_bi/gacha_monetization_dashboard.pbix) or shown as a [pdf](power_bi/gacha_monetization_dashboard.pdf).
+- Power BI Dashboard is available [online](https://app.powerbi.com/view?r=eyJrIjoiZjAwMDNjYWUtYTlmNS00MTYyLTgxMGYtZWU2NGJkZjZkYjc4IiwidCI6IjE5NTA0ZTk0LWQyNmMtNDczZS04ZGExLWMyYmRiMzYzZThlOCJ9&language=en-US), can be downloaded from the [repository](power-bi/online_retail_analysis.pbix) or shown as a [pdf](power-bi/online_retail_analysis_dashboard.pdf).
 - The Excel analysis workbook is available in the [`excel/`](excel/) directory.
 - SQL scripts used for database setup, data cleaning, modelling, quality checks and business analysis are available in the [`sql/`](sql/) directory.
 - The original dataset is available from the [UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/352/online%2Bretail).
 
-## Executive Summary
+## 📊 Executive Summary
 
-The retailer recorded £10.25M in gross merchandise sales, with cancellations reducing value by £475.90K. This resulted in £9.77M in net merchandise sales and a 95.36% sales-retention rate. Performance strengthened between September and November 2011, with November reaching £1.43M in net merchandise sales—the highest result among complete months.
+The retailer recorded **£10.25M** in gross merchandise sales, with cancellations reducing value by **£475.90K**. This resulted in **£9.77M** in net merchandise sales and a 95.36% sales-retention rate. Performance strengthened between September and November 2011, with November reaching **£1.43M** in net merchandise sales—the highest result among complete months.
 
 Value was highly concentrated. The United Kingdom generated 84.75% of net merchandise sales, while Champions represented 20.6% of segmented customers but contributed 65.6% of their total value. Average order value reached £518.24 compared with a median of £302.20, showing the influence of large wholesale transactions.
 
@@ -37,14 +37,17 @@ The analysis indicates that protecting high-value customers, re-engaging the At 
 
 ![Online Retail Sales Overview](images/sales_overview.png)
 
-## Key Insights
+## 🔍 Key Insights
 
 ### Sales Performance
 
-Monthly performance was uneven during the first half of the reporting period. Net merchandise sales fell to **£499.46K** in February and **£482.06K** in April, before remaining between approximately **£677K** and **£731K** from May to August 2011. Sales strengthened toward the end of the reporting period. Net merchandise sales increased from **£1.01M** in September to **£1.06M** in October and reached **£1.43M** in November 2011—the highest result among complete months.
+Monthly performance was uneven during the first half of the reporting period. Net merchandise sales fell to **£499.46K** in February and **£482.06K** in April, before remaining between approximately **£677K** and **£731K** from May to August 2011.
 
 Cancellation exposure was usually limited, but January and April stood out with cancellation value rates of **13.65%** and **6.46%**, respectively. December 2011 was excluded from month-to-month comparisons because the dataset covers only its first nine days.
+
 ### Product Cancellation Exposure
+
+Merchandise cancellations reduced recorded value by **£475.90K**, equivalent to **4.64%** of gross merchandise sales. This impact was concentrated among a relatively small number of products and exceptional bulk transactions.
 
 Cancellation impact was highly concentrated among a small number of products and transactions. `PAPER CRAFT, LITTLE BIRDIE` recorded **£168.47K** in gross sales followed by an equal cancellation, leaving no net merchandise value. Both entries related to a single bulk transaction of **80,995 units**.
 
@@ -60,7 +63,11 @@ Customer value was strongly concentrated. Champions accounted for **894 customer
 
 The At Risk segment contained **419 customers** with **£773.45K** in historical net value, making it the clearest reactivation priority. Hibernating was the largest segment with **1,228 customers**, but contributed only **£386.44K**, or **4.7%** of customer value.
 
-
+<p align="center">
+  <img src="images/customer_analysis.png"
+       alt="Online Retail Sales Analysis"
+       width="600">
+</p>
 ![Customer Analysis Dashboard](images/customer_analysis.png)
 
 ### Geographic Performance
@@ -75,9 +82,13 @@ Invoice activity was concentrated between late morning and mid-afternoon, with *
 
 No Saturday invoices occur in the raw source, clean view or final fact table. This absence was therefore not introduced during data preparation. Invoice timestamps may represent document processing rather than the exact moment of online purchase, so order-pattern results should not be interpreted as direct website-traffic behaviour.
 
-![Customer Order Patterns Dashboard](images/order_patterns.png)
+<p align="center">
+  <img src="images/order_patterns.png"
+       alt="Online Retail Sales Analysis"
+       width="850">
+</p>
 
-## Recommendations
+## 💡 Recommendations
 
 1. **Protect high-value customer relationships.** Champions generate most identified-customer value, so the retailer should monitor declines in their purchasing frequency and use targeted retention activities rather than broad discount campaigns.
 
@@ -93,7 +104,7 @@ No Saturday invoices occur in the raw source, clean view or final fact table. Th
 
 7. **Clarify the meaning of invoice timestamps.** Before using order-hour patterns for staffing or marketing decisions, the retailer should confirm whether timestamps represent customer purchases or subsequent invoice processing.
 
-## Technical Workflow
+## ⚙️ Technical Workflow
 
 ### 1. SQL — Data Preparation and Modelling
 
@@ -128,7 +139,7 @@ Power BI was connected to the final SQL model and used to build four report page
 
 DAX measures were used for filter-responsive KPIs, while the core cleaning rules, classifications and reusable business logic remained in SQL.
 
-## Data Model
+## 🗂️ Data Model
 
 The final analytical model follows a star schema centred on `fact_transactions`, where each row represents a cleaned transaction line.
 
@@ -141,7 +152,7 @@ Additional SQL views aggregate the model to order level and calculate RFM custom
 
 ![Data Model](images/data_model.png)
 
-## Limitations
+## ⚠️ Limitations
 
 - The dataset ends on **9 December 2011**, so this month was excluded from monthly performance comparisons.
 - Cancellation records indicate reversed invoice value but do not confirm the reason for cancellation or whether a physical product return occurred.
@@ -152,7 +163,7 @@ Additional SQL views aggregate the model to order level and calculate RFM custom
 - Invoice timestamps may represent document processing rather than the exact time of an online purchase.
 - No Saturday invoices occur in the source data, but the dataset does not explain the underlying operational reason.
 
-## Repository Structure
+## 📁 Repository Structure
 
 ```text
 online-retail-sales-analysis/
@@ -182,7 +193,7 @@ online-retail-sales-analysis/
 ```
 
 - [`data/`](data/) — source-data information and a portfolio-friendly sample of the dataset.
-- [`docs/`](docs/) — supporting project documentation.
+- [`docs/`](docs/) — data dictionary and supporting project documentation.
 - [`excel/`](excel/) — the Excel validation and business-exploration workbook.
 - [`images/`](images/) — dashboard pages and data-model screenshots used in this README.
 - [`power-bi/`](power-bi/) — the interactive Power BI report and its visual assets.
