@@ -22,14 +22,14 @@ The reporting model uses a star schema connecting transaction-level activity wit
 
 ### Project Resources
 
-- Power BI Dashboard is available [online](https://app.powerbi.com/links/G-9PEh4lpc?ctid=19504e94-d26c-473e-8da1-c2bdb363e8e8&pbi_source=linkShare&language=en-US), can be downloaded from the [repository](power_bi/gacha_monetization_dashboard.pbix) or shown as a [pdf](power_bi/gacha_monetization_dashboard.pdf).
+- Power BI Dashboard is available [online](https://app.powerbi.com/links/G-9PEh4lpc?ctid=19504e94-d26c-473e-8da1-c2bdb363e8e8&pbi_source=linkShare&language=en-US), can be downloaded from the [repository](power_bi/online_retail_analysis.pbix) or shown as a [pdf](power_bi/online_retail_analysis_dashboard.pdf).
 - The Excel analysis workbook is available in the [`excel/`](excel/) directory.
 - SQL scripts used for database setup, data cleaning, modelling, quality checks and business analysis are available in the [`sql/`](sql/) directory.
 - The original dataset is available from the [UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/352/online%2Bretail).
 
 ## 📊 Executive Summary
 
-The retailer recorded £10.25M in gross merchandise sales, with cancellations reducing value by £475.90K. This resulted in £9.77M in net merchandise sales and a 95.36% sales-retention rate. Performance strengthened between September and November 2011, with November reaching £1.43M in net merchandise sales—the highest result among complete months.
+The retailer recorded **£10.25M** in gross merchandise sales, with cancellations reducing value by **£475.90K**. This resulted in **£9.77M** in net merchandise sales and a 95.36% sales-retention rate. Performance strengthened between September and November 2011, with November reaching **£1.43M** in net merchandise sales—the highest result among complete months.
 
 Value was highly concentrated. The United Kingdom generated 84.75% of net merchandise sales, while Champions represented 20.6% of segmented customers but contributed 65.6% of their total value. Average order value reached £518.24 compared with a median of £302.20, showing the influence of large wholesale transactions.
 
@@ -60,7 +60,11 @@ Customer value was strongly concentrated. Champions accounted for **894 customer
 
 The At Risk segment contained **419 customers** with **£773.45K** in historical net value, making it the clearest reactivation priority. Hibernating was the largest segment with **1,228 customers**, but contributed only **£386.44K**, or **4.7%** of customer value.
 
-
+<p align="center">
+  <img src="images/customer_analysis.png"
+       alt="Online Retail Sales Analysis"
+       width="600">
+</p>
 ![Customer Analysis Dashboard](images/customer_analysis.png)
 
 ### Geographic Performance
@@ -75,7 +79,11 @@ Invoice activity was concentrated between late morning and mid-afternoon, with *
 
 No Saturday invoices occur in the raw source, clean view or final fact table. This absence was therefore not introduced during data preparation. Invoice timestamps may represent document processing rather than the exact moment of online purchase, so order-pattern results should not be interpreted as direct website-traffic behaviour.
 
-![Customer Order Patterns Dashboard](images/order_patterns.png)
+<p align="center">
+  <img src="images/order_patterns.png"
+       alt="Online Retail Sales Analysis"
+       width="850">
+</p>
 
 ## 💡 Recommendations
 
