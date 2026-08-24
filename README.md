@@ -22,7 +22,7 @@ The reporting model uses a star schema connecting transaction-level activity wit
 
 ### Project Resources
 
-- Power BI Dashboard is available [online](https://app.powerbi.com/links/G-9PEh4lpc?ctid=19504e94-d26c-473e-8da1-c2bdb363e8e8&pbi_source=linkShare&language=en-US), can be downloaded from the [repository](power_bi/online_retail_analysis.pbix) or shown as a [pdf](power_bi/online_retail_analysis_dashboard.pdf).
+- Power BI Dashboard is available [online](https://app.powerbi.com/links/G-9PEh4lpc?ctid=19504e94-d26c-473e-8da1-c2bdb363e8e8&pbi_source=linkShare&language=en-US), can be downloaded from the [repository](power-bi/online_retail_analysis.pbix) or shown as a [pdf](power-bi/online_retail_analysis_dashboard.pdf).
 - The Excel analysis workbook is available in the [`excel/`](excel/) directory.
 - SQL scripts used for database setup, data cleaning, modelling, quality checks and business analysis are available in the [`sql/`](sql/) directory.
 - The original dataset is available from the [UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/352/online%2Bretail).
