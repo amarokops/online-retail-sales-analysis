@@ -1,8 +1,8 @@
 # Online Retail Sales Analysis
 
-![Company Logo](images/stellar_drift.png)
+![Banner](images/readme_banner.png)
 
-## Project Background
+## 🧭 Project Background
 
 This project analyzes transactional data from a UK-based online retailer. The source combines merchandise purchases with cancellations, inventory adjustments, shipping charges, discounts and other operational entries, making raw transaction value an unreliable measure of product sales.
 
@@ -27,7 +27,7 @@ The reporting model uses a star schema connecting transaction-level activity wit
 - SQL scripts used for database setup, data cleaning, modelling, quality checks and business analysis are available in the [`sql/`](sql/) directory.
 - The original dataset is available from the [UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/352/online%2Bretail).
 
-## Executive Summary
+## 📊 Executive Summary
 
 The retailer recorded £10.25M in gross merchandise sales, with cancellations reducing value by £475.90K. This resulted in £9.77M in net merchandise sales and a 95.36% sales-retention rate. Performance strengthened between September and November 2011, with November reaching £1.43M in net merchandise sales—the highest result among complete months.
 
@@ -37,7 +37,7 @@ The analysis indicates that protecting high-value customers, re-engaging the At 
 
 ![Online Retail Sales Overview](images/sales_overview.png)
 
-## Key Insights
+## 🔍 Key Insights
 
 ### Sales Performance
 
@@ -77,7 +77,7 @@ No Saturday invoices occur in the raw source, clean view or final fact table. Th
 
 ![Customer Order Patterns Dashboard](images/order_patterns.png)
 
-## Recommendations
+## 💡 Recommendations
 
 1. **Protect high-value customer relationships.** Champions generate most identified-customer value, so the retailer should monitor declines in their purchasing frequency and use targeted retention activities rather than broad discount campaigns.
 
@@ -93,7 +93,7 @@ No Saturday invoices occur in the raw source, clean view or final fact table. Th
 
 7. **Clarify the meaning of invoice timestamps.** Before using order-hour patterns for staffing or marketing decisions, the retailer should confirm whether timestamps represent customer purchases or subsequent invoice processing.
 
-## Technical Workflow
+## ⚙️ Technical Workflow
 
 ### 1. SQL — Data Preparation and Modelling
 
@@ -128,7 +128,7 @@ Power BI was connected to the final SQL model and used to build four report page
 
 DAX measures were used for filter-responsive KPIs, while the core cleaning rules, classifications and reusable business logic remained in SQL.
 
-## Data Model
+## 🗂️ Data Model
 
 The final analytical model follows a star schema centred on `fact_transactions`, where each row represents a cleaned transaction line.
 
@@ -141,7 +141,7 @@ Additional SQL views aggregate the model to order level and calculate RFM custom
 
 ![Data Model](images/data_model.png)
 
-## Limitations
+## ⚠️ Limitations
 
 - The dataset ends on **9 December 2011**, so this month was excluded from monthly performance comparisons.
 - Cancellation records indicate reversed invoice value but do not confirm the reason for cancellation or whether a physical product return occurred.
@@ -152,7 +152,7 @@ Additional SQL views aggregate the model to order level and calculate RFM custom
 - Invoice timestamps may represent document processing rather than the exact time of an online purchase.
 - No Saturday invoices occur in the source data, but the dataset does not explain the underlying operational reason.
 
-## Repository Structure
+## 📁 Repository Structure
 
 ```text
 online-retail-sales-analysis/
